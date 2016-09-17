@@ -5,7 +5,7 @@ var path = require('path');
 
 // Configuration for the app
 app.use(express.static(path.join(__dirname, "public")));
-app.set("port", 80);
+app.set("port", 3000);
 
 // Server stuff
 var server = app.listen(app.get("port"),function() {
