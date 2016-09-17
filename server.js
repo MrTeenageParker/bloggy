@@ -7,6 +7,8 @@ var path = require('path');
 app.use(express.static(path.join(__dirname, "public")));
 app.set("port", 3000);
 
+[][];;__
+
 // Server stuff
 var server = app.listen(app.get("port"),function() {
 	var port = server.address().port;
