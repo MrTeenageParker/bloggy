@@ -1,28 +1,34 @@
-//Lets require/import the HTTP module
+// Credit to user1937198 on StackOverflow for the response code
 var http = require('http');
-var fs=require('fs');
+var fs = require('fs');
 
-//Lets define a port we want to listen to
+// Port to listen to
 const PORT=80;
 
-//We need a function which handles requests and send response
 function handleRequest(request, response){
-   fs.readFile("index.html",function(error,data){
-       if(error){
-           response.writeHead(404,{"Content-type":"text/plain"});
-           response.end("Sorry the page was not found");
-       }else{
-           response.writeHead(202,{"Content-type":"text/html"});
-           response.end(data);
-       }
+   fs.readFile("." + request.url,function(error,data){
+	if(request.url == "/"){
+	   fs.readFile("index.html",function(error,data){
+		response.writeHead(202,{"Content-type":"text/html"});
+           	response.end(data);
+	   });
+	} else {
+	   fs.readFile("."+request.url,function(error,file){
+		if(error){
+			response.writeHead(404,{"Content-type":"text/plain"});
+           		response.end("Sorry the page was not found");
+		} else {
+           		response.writeHead(202,{"Content-type":"text/html"});
+           		response.end(file);
+		}
+	   });
+	}
    });
 }
 
-//Create a server
 var server = http.createServer(handleRequest);
 
-//Lets start our server
 server.listen(PORT, function(){
-    //Callback triggered when server is successfully listening. Hurray!
+    // Add logging to a file for future reference?
     console.log("Server listening on: http://localhost:%s", PORT);
 });
