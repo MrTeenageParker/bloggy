@@ -8,8 +8,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "node server.js",
-    "start": "node server.js"
+    "test": "sudo node server.js",
+    "start": "sudo node server.js"
   },
   "repository": {
     "type": "git",
