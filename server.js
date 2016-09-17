@@ -18,7 +18,7 @@ function handleRequest(request, response){
 			response.writeHead(404,{"Content-type":"text/plain"});
            		response.end("Sorry the page was not found");
 		} else {
-			if((request.url).match(/(gif|png|jpg|jpeg)$/)){
+			if((request.url).match(/(gif|png|jpg|jpeg|ico)$/)){
 				response.writeHead(202,{"Content-type":"image"});
                         	response.end(file,'binary');
 			} else {
