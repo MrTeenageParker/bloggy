@@ -1,0 +1,24 @@
+{
+  "name": "bloggy",
+  "version": "1.0.0",
+  "description": "A open-source alternative to Wordpress",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrTeenageParker/bloggy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrTeenageParker/bloggy/issues"
+  },
+  "homepage": "https://github.com/MrTeenageParker/bloggy#readme"
+}
