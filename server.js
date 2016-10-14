@@ -29,6 +29,6 @@ app.post('/post/login_user', function(req,res){
 // Server stuff
 var server = app.listen(app.get("port"),function() {
 	var port = server.address().port;
-	var address = server.address().address;
+	var address = server.address().address; // Bug: produces NaN on testing servers and real servers
 	console.log("Listening to port " + port + " on address " +  + "!");
 });
