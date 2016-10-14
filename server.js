@@ -15,11 +15,20 @@ app.use(bodyParser.json());
 var db_path = 'db/db.json';
 
 app.post('/post/get_posts', function(req,res){
-	
+	// logic
+});
+
+app.post('/post/blog_publish', function(req,res){
+	// logic
+});
+
+app.post('/post/login_user', function(req,res){
+	// logic
 });
 
 // Server stuff
 var server = app.listen(app.get("port"),function() {
 	var port = server.address().port;
-	console.log("Listening to port " + port + "!");
+	var address = server.address().address;
+	console.log("Listening to port " + port + " on address " +  + "!");
 });
