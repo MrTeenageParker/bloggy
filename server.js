@@ -9,7 +9,7 @@ var fs = require('json-db');
 // Configuration for the app
 app.use(express.static(path.join(__dirname, "public")));
 app.set("port",process.env.PORT || 3000); // Server port, with support for environments with fixed ports
-app.set("ip",process.env.IP); // Server address (for servers with more than one IP allocated, or forced IP restrictions)
+app.set("ip",process.env.IP || '127.0.0.1'); // Server address (for servers with more than one IP allocated, or forced IP restrictions)
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 var db_path = 'db/db.json';
